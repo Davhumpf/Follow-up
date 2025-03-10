@@ -104,11 +104,11 @@ function App() {
 
   return (
     <div
-      className="min-h-screen p-8 relative"
+      className="min-h-screen p-4 sm:p-8 relative"
       style={{
         backgroundImage: `url('/background.jpg')`,
         backgroundColor: '#000',
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundAttachment: 'fixed',
@@ -120,10 +120,10 @@ function App() {
       {/* Contenido de la página */}
       <div className="relative z-10 max-w-6xl mx-auto">
         {/* Título "Streaming Manager" */}
-        <div className="flex flex-col items-center mb-8 bg-white/10 backdrop-blur-sm rounded-3xl p-6 w-full max-w-2xl mx-auto">
+        <div className="flex flex-col items-center mb-8 bg-white/10 backdrop-blur-sm rounded-3xl p-4 sm:p-6 w-full max-w-2xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <Sparkles className="text-yellow-400" size={32} />
-            <h1 className="text-3xl font-bold text-white">Streaming Manager</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-white">Streaming Manager</h1>
           </div>
           <button
             onClick={() => setShowForm(true)}
@@ -135,7 +135,7 @@ function App() {
         </div>
 
         {showForm && (
-          <div className="bg-white rounded-2xl shadow-2xl p-6 mb-8 animate-fadeIn max-w-2xl mx-auto">
+          <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 mb-8 animate-fadeIn max-w-2xl mx-auto">
             <div className="flex justify-center gap-4 mb-6">
               <button
                 onClick={() => {
@@ -311,16 +311,16 @@ function App() {
 
         <div className="grid md:grid-cols-2 gap-6">
           {/* Sección "Cuentas Personales" */}
-          <div className="space-y-6 bg-white/10 backdrop-blur-sm rounded-3xl p-6">
+          <div className="space-y-6 bg-white/10 backdrop-blur-sm rounded-3xl p-4 sm:p-6">
             <h2 className="text-xl font-semibold text-white text-center mb-4">Cuentas Personales</h2>
             {personalAccounts.map((group, index) => (
               <div
                 key={index}
                 className={`bg-gradient-to-r ${
                   SERVICES_CONFIG[group.service].gradient
-                } text-white rounded-lg p-6 transform transition-all hover:scale-[1.02] hover:shadow-xl`}
+                } text-white rounded-lg p-4 sm:p-6 transform transition-all hover:scale-[1.02] hover:shadow-xl`}
               >
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
                   <div className="flex items-center gap-3">
                     <h3 className="text-xl font-bold capitalize">{group.service}</h3>
                     <User size={20} className="opacity-75" />
@@ -360,16 +360,16 @@ function App() {
           </div>
 
           {/* Sección "Cuentas Grupales" */}
-          <div className="space-y-6 bg-white/10 backdrop-blur-sm rounded-3xl p-6">
+          <div className="space-y-6 bg-white/10 backdrop-blur-sm rounded-3xl p-4 sm:p-6">
             <h2 className="text-xl font-semibold text-white text-center mb-4">Cuentas Grupales</h2>
             {groupAccounts.map((group, index) => (
               <div
                 key={index}
                 className={`bg-gradient-to-r ${
                   SERVICES_CONFIG[group.service].gradient
-                } text-white rounded-lg p-6 transform transition-all hover:scale-[1.02] hover:shadow-xl`}
+                } text-white rounded-lg p-4 sm:p-6 transform transition-all hover:scale-[1.02] hover:shadow-xl`}
               >
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex flex-col sm:flex-row justify-between items-center mb-4 gap-4">
                   <div className="flex items-center gap-3">
                     <h3 className="text-xl font-bold capitalize">{group.service}</h3>
                     <Users size={20} className="opacity-75" />
